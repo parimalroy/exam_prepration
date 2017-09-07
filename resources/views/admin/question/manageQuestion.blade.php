@@ -23,6 +23,7 @@ Manage Question
                             <th>Question ID</th>
                             <th>Question Name</th>
                             <th>Answare</th>
+                            <th>Sub Categorie</th>
                             <th>Publication Status</th>
                             <th>Action</th>
                         </tr>
@@ -33,20 +34,21 @@ Manage Question
                             <td>{{$allQuestion->ques_id}}</td>
                             <td>{{$allQuestion->question_name}}</td>
                             <td>{{$allQuestion->answare_name}}</td>
+                            <td>{{$allQuestion->sub_categorie_name}}</td>
                             <td>{{$allQuestion->publication_status==1? 'Publish' : 'Unpublish'}}</td>
                             <td class="center">
                                 @if($allQuestion->publication_status==1)
-                                <a href="" title="Unpublish" class="btn btn-primary btn-sm">
+                                <a href="{{url('question_unpublish/'.$allQuestion->ques_id)}}" title="Unpublish" class="btn btn-primary btn-sm">
                                     <span class="glyphicon glyphicon-arrow-up"></span>
                                 </a>
                                 @else
-                                <a href="" title="Publish" class="btn btn-warning btn-sm">
+                                <a href="{{url('question_publish/'.$allQuestion->ques_id)}}" title="Publish" class="btn btn-warning btn-sm">
                                     <span class="glyphicon glyphicon-arrow-down"></span>
                                 </a>
                                 @endif
-                                <a href="" title="Edit" class="btn btn-success btn-sm">
+<!--                                <a href="" title="Edit" class="btn btn-success btn-sm">
                                     <span class="glyphicon glyphicon-edit"></span>
-                                </a>
+                                </a>-->
                                 <a href="" title="Delete" class="btn btn-danger btn-sm" onclick="return confirm('are you sure to delete!!')">
                                     <span class="glyphicon glyphicon-trash"></span>
                                 </a>

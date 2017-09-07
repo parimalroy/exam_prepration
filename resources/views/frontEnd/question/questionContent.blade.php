@@ -11,14 +11,16 @@ Question and answare
                 <div class="col-md">
 <!--                    <a href="single.html" class="compare-in"><img  src="images/pic.jpg" alt="" />
                     </a>	-->
+                    @foreach($questionAndanswares as $questionAndansware)
                     <div class="top-content">
-                        <h4>Ques:</h4>
+                        <h4><span style="color:blue"">Ques: {{$questionAndansware->question_name}}</span></h4>
                         <div class="white">
-                            <p>Ans:</p>
+                            <p>Ans:{{$questionAndansware->answare_name}}</p><hr/>
                             <!--<p class="dollar"><span class="in-dollar">$</span><span>2</span><span>0</span></p>-->
                             <div class="clearfix"></div>
                         </div>
-                    </div>							
+                    </div>
+                    @endforeach
                 </div>
             </div>
           

@@ -16,7 +16,7 @@
 //});
 
 Route::get('/','WelcomeController@index');
-Route::get('questin_details','WelcomeController@questionDetails');
+Route::get('questin_details/{id }','WelcomeController@questionDetails');
 
 
 Route::get('admin-login','AdminController@index');
@@ -37,6 +37,8 @@ Route::post('categorie-update','CategorieController@updateCategorie');
 Route::get('question_add','QuestionController@index');
 Route::post('question-save','QuestionController@saveQuestion');
 Route::get('question_manage','QuestionController@manageQuestion');
+Route::get('question_unpublish/{id}','QuestionController@UnpublishQuestion');
+Route::get('question_publish/{id}','QuestionController@publishQuestion');
 
 Route::get('sub_categorie_add','SubcategorieController@index');
 Route::post('sub_categorie-save','SubcategorieController@saveSubCategorie');
@@ -45,4 +47,5 @@ Route::get('sub_categorie_unpublish/{id}','SubcategorieController@unpublishSubCa
 Route::get('sub_categorie_publish/{id}','SubcategorieController@publishSubCategorie');
 Route::get('sub_categorie_delete/{id}','SubcategorieController@deleteSubCategorie');
 Route::get('sub_categorie_edit/{id}','SubcategorieController@editSubCategorie');
+Route::post('sub_categorie-update','SubcategorieController@updateSubCategorie');
 Route::post('sub_categorie-update','SubcategorieController@updateSubCategorie');

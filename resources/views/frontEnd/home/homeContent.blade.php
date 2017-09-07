@@ -39,61 +39,24 @@ Home Page
 <div class="container">
     <div class="content">
         <div class="content-top">
-            <h3 class="future">FEATURED</h3>
+            <h3 class="future">Prepration</h3>
             <div class="content-top-in">
+                @foreach($allSubCategories as $allSubCategorie)
                 <div class="col-md-3 md-col">
                     <div class="col-md">
-                        <a href="single.html"><img  src="{{asset('public/frontEnd/')}}/images/pi.jpg" alt="" /></a>	
+                        <a href="{{url('questin_details/'.$allSubCategorie->subcate_id)}}"><img  src="{{asset($allSubCategorie->sub_category_photo)}}" alt="" /></a>	
                         <div class="top-content">
-                            <h5><a href="single.html">Mascot Kitty - White</a></h5>
+                            <h5><a href="{{url('questin_details/'.$allSubCategorie->subcate_id)}})}}">{{$allSubCategorie->sub_categorie_name}}</a></h5>
                             <div class="white">
-                                <a href="single.html" class="hvr-shutter-in-vertical hvr-shutter-in-vertical2 ">ADD TO CART</a>
+<!--                                <a href="{{url('questin_details')}}" class="hvr-shutter-in-vertical hvr-shutter-in-vertical2 ">ADD TO CART</a>
                                 <p class="dollar"><span class="in-dollar">$</span><span>2</span><span>0</span></p>
-                                <div class="clearfix"></div>
+                                <div class="clearfix"></div>-->
                             </div>
 
                         </div>							
                     </div>
                 </div>
-                <div class="col-md-3 md-col">
-                    <div class="col-md">
-                        <a href="single.html"><img  src="{{asset('public/frontEnd/')}}/images/pi1.jpg" alt="" />	</a>
-                        <div class="top-content">
-                            <h5><a href="single.html">Bite Me</a></h5>
-                            <div class="white">
-                                <a href="single.html" class="hvr-shutter-in-vertical hvr-shutter-in-vertical2">ADD TO CART</a>
-                                <p class="dollar"><span class="in-dollar">$</span><span>3</span><span>0</span></p>
-                                <div class="clearfix"></div>
-                            </div>
-                        </div>							
-                    </div>
-                </div>
-                <div class="col-md-3 md-col">
-                    <div class="col-md">
-                        <a href="single.html"><img  src="{{asset('public/frontEnd/')}}/images/pi2.jpg" alt="" /></a>	
-                        <div class="top-content">
-                            <h5><a href="single.html">Little Fella</a></h5>
-                            <div class="white">
-                                <a href="single.html" class="hvr-shutter-in-vertical hvr-shutter-in-vertical2">ADD TO CART</a>
-                                <p class="dollar"><span class="in-dollar">$</span><span>5</span><span>0</span></p>
-                                <div class="clearfix"></div>
-                            </div>
-                        </div>							
-                    </div>
-                </div>
-                <div class="col-md-3 md-col">
-                    <div class="col-md">
-                        <a href="single.html"><img  src="{{asset('public/frontEnd/')}}/images/pi3.jpg" alt="" /></a>	
-                        <div class="top-content">
-                            <h5><a href="single.html">Astral Cruise</a></h5>
-                            <div class="white">
-                                <a href="single.html" class="hvr-shutter-in-vertical hvr-shutter-in-vertical2">ADD TO CART</a>
-                                <p class="dollar"><span class="in-dollar">$</span><span>4</span><span>5</span></p>
-                                <div class="clearfix"></div>
-                            </div>
-                        </div>							
-                    </div>
-                </div>
+               @endforeach
                 <div class="clearfix"></div>
             </div>
         </div>
