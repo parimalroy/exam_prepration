@@ -313,7 +313,7 @@
                                         <a href="{{url('question_add')}}">Add Question</a>
                                     </li>
                                     <li>
-                                        <a href="">Manage Categories</a>
+                                        <a href="{{url('question_manage')}}">Manage Categories</a>
                                     </li>
                                 </ul>
                                 <!-- /.nav-second-level -->

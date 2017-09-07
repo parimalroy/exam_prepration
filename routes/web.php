@@ -36,6 +36,7 @@ Route::post('categorie-update','CategorieController@updateCategorie');
 
 Route::get('question_add','QuestionController@index');
 Route::post('question-save','QuestionController@saveQuestion');
+Route::get('question_manage','QuestionController@manageQuestion');
 
 Route::get('sub_categorie_add','SubcategorieController@index');
 Route::post('sub_categorie-save','SubcategorieController@saveSubCategorie');

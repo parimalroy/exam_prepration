@@ -25,4 +25,12 @@ class QuestionController extends Controller
         return redirect('question_add')->with('message','Question save Sucessfully');
                 
     }
+    
+    public function manageQuestion(){
+        $allQuestions=DB::table('tbl_que')
+                    ->select('*')
+                    ->take(20)
+                    ->get();
+        return view('admin.question.manageQuestion',['allQuestions'=>$allQuestions]);
+    }
 }
