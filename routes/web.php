@@ -16,7 +16,9 @@
 //});
 
 Route::get('/','WelcomeController@index');
-Route::get('questin_details/{id }','WelcomeController@questionDetails');
+Route::get('questin_details/{id}','WelcomeController@questionDetails');
+Route::get('categorie-details/{id}','WelcomeController@categorieDetails');
+
 
 
 Route::get('admin-login','AdminController@index');
@@ -33,6 +35,27 @@ Route::get('categorie-publish/{id}','CategorieController@PublishCategorie');
 Route::get('categorie-delete/{id}','CategorieController@deleteCategorie');
 Route::get('categorie-edit/{id}','CategorieController@editCategorie');
 Route::post('categorie-update','CategorieController@updateCategorie');
+
+
+
+Route::get('examCategorie-addExamCategorie','ExamCategorieController@index');
+Route::post('examCategorie-save','ExamCategorieController@saveExamCategorie');
+Route::get('examCategorie-manageExamCategorie','ExamCategorieController@manageExamCategorie');
+Route::get('examCategorie-unpublish/{id}','ExamCategorieController@UnpublishExamCategorie');
+Route::get('examCategorie-publish/{id}','ExamCategorieController@publishExamCategorie');
+Route::get('examCategorie-delete/{id}','ExamCategorieController@deleteExamCategorie');
+
+
+Route::get('examSubCategorie-addExamSubCategorie','ExamSubCategorieController@index');
+Route::post('examSubCategorie-save','ExamSubCategorieController@saveExamSubCategorie');
+Route::get('examSubCategorie-manageExamSubCategorie','ExamSubCategorieController@manageExamSubCategorie');
+Route::get('examCategorie-unpublish/{id}','ExamSubCategorieController@unpublishExamSubCategoriebCategorie-save','ExamSubCategorieController@saveExamSubCategorie');
+Route::get('examSubCategorie-manageExamSubCategorie','ExamSubCategorieController@manageExamSubCategorie');
+Route::get('examCategorie-unpublish/{id}','ExamSubCategorieController@unpublishExamSubCategorie');
+Route::get('examCategorie-publish/{id}','ExamSubCategorieController@publishExamSubCategorie');
+Route::get('examCategorie-delete/{id}','ExamSubCategorieController@DeleteExamSubCategorie');
+
+
 
 Route::get('question_add','QuestionController@index');
 Route::post('question-save','QuestionController@saveQuestion');

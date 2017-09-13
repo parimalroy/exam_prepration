@@ -6,14 +6,15 @@
             </div>
             <div class="header-in">
                 <ul class="icon1 sub-icon1">
-                    <li  ><a href="wishlist.html">WISH LIST (0)</a> </li>
-                    <li  ><a href="account.html">  MY ACCOUNT</a></li>
-                    <li ><a href="#" > SHOPPING CART</a></li>
-                    <li > <a href="checkout.html" >CHECKOUT</a> </li>	
-                    <li><div class="cart">
+                    <li  ><b><a href="">Sign In</a> </b></li>
+                    <li  ><b><a href=""> Sign Up</a></b> </li>
+                    <li ><a href="#" > </a></li>
+                    <li > <a href="checkout.html" ></a> </li>	
+                    <li>
+<!--                        <div class="cart">
                             <a href="#" class="cart-in"> </a>
                             <span> 0</span>
-                        </div>
+                        </div>-->
                         <ul class="sub-icon1 list">
                             <h3>Recently added items(2)</h3>
                             <div class="shopping_cart">
@@ -60,13 +61,9 @@
             <a class="toggleMenu" href="#">Menu</a>
             <ul class="nav">
                 <li class="active"><a href="{{url('/')}}"><i> </i>Home</a></li>
-                <li><a href="{{url('questin_details')}}" >  Tablets</a></li>            
-                <li><a href="products.html" >Components</a></li>						  				 
-                <li><a href="products.html" >Software</a></li>
-                <li><a href="products.html" >Phones & PDAs </a></li>
-                <li><a href="products.html" >  Cameras  </a></li>
-                <li><a href="contact.html" >Contact </a></li>
-
+                @foreach($allPublicationCategories as $allPublicationCategorie)
+                <li><a href="{{url('categorie-details/'.$allPublicationCategorie->Cate_id)}}" ><b><span class="text text-success">{{$allPublicationCategorie->category_name}}</span></b></a></li>            
+               @endforeach
             </ul>
             <script type="text/javascript" src="{{asset('public/frontEnd/')}}/js/nav.js"></script>
         </div>
@@ -84,11 +81,12 @@
                     <li><a href="#"><i class="skype"> </i></a></li>
                 </ul>	
                 <div class="down-top">		
-                    <select class="in-drop">
+<!--                    <select class="in-drop">
                         <option value="Dollars" class="in-of">Dollars</option>
                         <option value="Euro" class="in-of">Euro</option>
                         <option value="Yen" class="in-of">Yen</option>
-                    </select>
+                    </select>-->
+                    
                 </div>
                 <div class="search">
                     <form>

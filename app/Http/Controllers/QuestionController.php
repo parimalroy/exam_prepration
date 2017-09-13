@@ -27,6 +27,8 @@ class QuestionController extends Controller {
 
     public function manageQuestion() {
         $allQuestions = DB::table('tbl_que')
+//                ->select('*')
+//                ->where('publication_status',1)
                 ->join('tbl_subcategorie', 'tbl_que.categorie_id', '=', 'tbl_subcategorie.subcate_id')
                 ->select('tbl_que.*', 'tbl_subcategorie.sub_categorie_name')
                 ->get();

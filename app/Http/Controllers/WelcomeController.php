@@ -12,7 +12,11 @@ class WelcomeController extends Controller {
                 ->where('publication_status', 1)
                 ->take(8)
                 ->get();
-        return view('frontEnd.home.homeContent', ['allSubCategories' => $allSubCategories]);
+        $allExamSubCategories=DB::table('tbl_exam_sub_cate')
+                                ->select('*')
+                                ->where('publication_status',1)
+                                ->first();
+        return view('frontEnd.home.homeContent', ['allSubCategories' => $allSubCategories,'allExamSubCategories'=>$allExamSubCategories]);
     }
 
     public function questionDetails($id) {
@@ -24,5 +28,16 @@ class WelcomeController extends Controller {
 
         return view('frontEnd.question.questionContent', ['questionAndanswares' => $questionAndanswares]);
     }
+    public function categorieDetails($id){
+        $allSubcategories=DB::table('tbl_subcategorie')
+                              ->select('*')
+                              ->where('publication_status',1)
+                              ->where('categorie_id',$id)
+                              ->join('tbl_categorie', 'tbl_subcategorie.categorie_id', '=', 'tbl_categorie.Cate_id')
+                              ->select('tbl_subcategorie.*','tbl_categorie.*')
+                              ->get();
+        return view('frontEnd.question.categorieDetails',['allSubcategories'=>$allSubcategories]);
+    }
+
 
 }

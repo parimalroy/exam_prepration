@@ -23,11 +23,11 @@ Home Page
 
             <div class="banner-bottom">
                 <div class="banner-matter">
-                    <p>Childish Gambino - Camp Now Available for just $9.99</p> 
-                    <a href="single.html" class="hvr-shutter-in-vertical ">Purchase</a>
+                    <p>Bangladesh Largest Examination Prepration Portal.More Visit and more Learn</p> 
+                    <!--<a href="single.html" class="hvr-shutter-in-vertical ">Purchase</a>-->
                 </div>
                 <div class="purchase">
-                    <a href="single.html" class="hvr-shutter-in-vertical hvr-shutter-in-vertical2 ">Purchase</a>
+                    <!--<a href="single.html" class="hvr-shutter-in-vertical hvr-shutter-in-vertical2 ">Purchase</a>-->
                 </div>
                 <div class="clearfix"></div>
             </div>
@@ -46,31 +46,36 @@ Home Page
                     <div class="col-md">
                         <a href="{{url('questin_details/'.$allSubCategorie->subcate_id)}}"><img  src="{{asset($allSubCategorie->sub_category_photo)}}" alt="" /></a>	
                         <div class="top-content">
-                            <h5><a href="{{url('questin_details/'.$allSubCategorie->subcate_id)}})}}">{{$allSubCategorie->sub_categorie_name}}</a></h5>
+                            <h5><a href="{{url('questin_details/'.$allSubCategorie->subcate_id)}}">{{$allSubCategorie->sub_categorie_name}}</a></h5>
                             <div class="white">
-<!--                                <a href="{{url('questin_details')}}" class="hvr-shutter-in-vertical hvr-shutter-in-vertical2 ">ADD TO CART</a>
-                                <p class="dollar"><span class="in-dollar">$</span><span>2</span><span>0</span></p>
-                                <div class="clearfix"></div>-->
+                                <!--                                <a href="{{url('questin_details')}}" class="hvr-shutter-in-vertical hvr-shutter-in-vertical2 ">ADD TO CART</a>
+                                                                <p class="dollar"><span class="in-dollar">$</span><span>2</span><span>0</span></p>
+                                                                <div class="clearfix"></div>-->
                             </div>
 
                         </div>							
                     </div>
+                    <br/>
                 </div>
-               @endforeach
+                @endforeach
                 <div class="clearfix"></div>
             </div>
         </div>
         <!---->
         <div class="content-middle">
-            <h3 class="future">BRANDS</h3>
+            <h3 class="future">BCS Question</h3>
             <div class="content-middle-in">
-                <ul id="flexiselDemo1">			
-                    <li><img src="{{asset('public/frontEnd/')}}/images/ap.png"/></li>
-                    <li><img src="{{asset('public/frontEnd/')}}/images/ap1.png"/></li>
-                    <li><img src="{{asset('public/frontEnd/')}}/images/ap2.png"/></li>
-                    <li><img src="{{asset('public/frontEnd/')}}/images/ap3.png"/></li>
+                @foreach($allExamSubCategories as $allExamSubCategorie)
+                <ul id="flexiselDemo1">	
+                    
+                    <li><img src="{{asset('public/frontEnd/')}}/images/ap.png"/>{{$allExamSubCategories->exam_sub_category_name}}</li>
+                    
+                    <!--<li><img src="{{asset('public/frontEnd/')}}/images/ap1.png"/></li>-->
+                    <!--<li><img src="{{asset('public/frontEnd/')}}/images/ap2.png"/></li>-->
+                    <!--<li><img src="{{asset('public/frontEnd/')}}/images/ap3.png"/></li>-->
 
                 </ul>
+                @endforeach
                 <script type="text/javascript">
                     $(window).load(function () {
                         $("#flexiselDemo1").flexisel({
@@ -106,107 +111,66 @@ Home Page
         <div class="content-bottom">
             <h3 class="future">LATEST</h3>
             <div class="content-bottom-in">
-                <ul id="flexiselDemo2">			
-                    <li><div class="col-md men">
-                            <a href="single.html" class="compare-in "><img  src="{{asset('public/frontEnd/')}}/images/pi4.jpg" alt="" />
+                
+                <ul id="flexiselDemo2">	
+                    @foreach($allSubCategories as $allSubCategorie)
+                    <li>
+                        <div class="col-md men">
+                            <a href="{{url('questin_details/'.$allSubCategorie->subcate_id)}}"><img  src="{{asset($allSubCategorie->sub_category_photo)}}" alt="" />
                                 <div class="compare in-compare">
-                                    <span>Add to Compare</span>
-                                    <span>Add to Whislist</span>
+<!--                                    <span>Add to Compare</span>
+                                    <span>Add to Whislist</span>-->
                                 </div></a>
                             <div class="top-content bag">
-                                <h5><a href="single.html">Symbolic Bag</a></h5>
+                                <h5><a href="{{url('questin_details/'.$allSubCategorie->subcate_id)}}"><span class="text text-success">{{$allSubCategorie->sub_categorie_name}}</span></a></h5>
                                 <div class="white">
-                                    <a href="single.html" class="hvr-shutter-in-vertical hvr-shutter-in-vertical2">ADD TO CART</a>
-                                    <p class="dollar"><span class="in-dollar">$</span><span>4</span><span>0</span></p>
+<!--                                    <a href="single.html" class="hvr-shutter-in-vertical hvr-shutter-in-vertical2">ADD TO CART</a>
+                                    <p class="dollar"><span class="in-dollar">$</span><span>4</span><span>0</span></p>-->
                                     <div class="clearfix"></div>
                                 </div>
                             </div>							
-                        </div></li>
-                    <li><div class="col-md men">
-                            <a href="single.html" class="compare-in "><img  src="{{asset('public/frontEnd/')}}/images/pi5.jpg" alt="" />
-                                <div class="compare in-compare">
-                                    <span>Add to Compare</span>
-                                    <span>Add to Whislist</span>
-                                </div></a>	
-                            <div class="top-content bag">
-                                <h5><a href="single.html">Interesting Read</a></h5>
-                                <div class="white">
-                                    <a href="single.html" class="hvr-shutter-in-vertical hvr-shutter-in-vertical2">ADD TO CART</a>
-                                    <p class="dollar"><span class="in-dollar">$</span><span>2</span><span>5</span></p>
-                                    <div class="clearfix"></div>
-                                </div>
-                            </div>							
-                        </div></li>
-                    <li><div class="col-md men">
-                            <a href="single.html" class="compare-in "><img  src="{{asset('public/frontEnd/')}}/images/pi6.jpg" alt="" />
-                                <div class="compare in-compare">
-                                    <span>Add to Compare</span>
-                                    <span>Add to Whislist</span>
-                                </div></a>	
-                            <div class="top-content bag">
-                                <h5><a href="single.html">The Carter</a></h5>
-                                <div class="white">
-                                    <a href="single.html" class="hvr-shutter-in-vertical hvr-shutter-in-vertical2">ADD TO CART</a>
-                                    <p class="dollar"><span class="in-dollar">$</span><span>1</span><span>0</span></p>
-                                    <div class="clearfix"></div>
-                                </div>
-                            </div>							
-                        </div></li>
-                    <li><div class="col-md men">
-                            <a href="single.html" class="compare-in "><img  src="{{asset('public/frontEnd/')}}/images/pi7.jpg" alt="" />
-                                <div class="compare in-compare">
-                                    <span>Add to Compare</span>
-                                    <span>Add to Whislist</span>
-                                </div></a>	
-                            <div class="top-content bag">
-                                <h5><a href="single.html">Onesie</a></h5>
-                                <div class="white">
-                                    <a href="single.html" class="hvr-shutter-in-vertical hvr-shutter-in-vertical2">ADD TO CART</a>
-                                    <p class="dollar"><span class="in-dollar">$</span><span>6</span><span>0</span></p>
-                                    <div class="clearfix"></div>
-                                </div>
-                            </div>							
-                        </div></li>
-
+                        </div>
+                    </li>
+                    @endforeach
                 </ul>
                 <script type="text/javascript">
-    $(window).load(function () {
-        $("#flexiselDemo2").flexisel({
-            visibleItems: 4,
-            animationSpeed: 1000,
-            autoPlay: true,
-            autoPlaySpeed: 3000,
-            pauseOnHover: true,
-            enableResponsiveBreakpoints: true,
-            responsiveBreakpoints: {
-                portrait: {
-                    changePoint: 480,
-                    visibleItems: 1
-                },
-                landscape: {
-                    changePoint: 640,
-                    visibleItems: 2
-                },
-                tablet: {
-                    changePoint: 768,
-                    visibleItems: 3
-                }
-            }
-        });
+                    $(window).load(function () {
+                        $("#flexiselDemo2").flexisel({
+                            visibleItems: 4,
+                            animationSpeed: 1000,
+                            autoPlay: true,
+                            autoPlaySpeed: 3000,
+                            pauseOnHover: true,
+                            enableResponsiveBreakpoints: true,
+                            responsiveBreakpoints: {
+                                portrait: {
+                                    changePoint: 480,
+                                    visibleItems: 1
+                                },
+                                landscape: {
+                                    changePoint: 640,
+                                    visibleItems: 2
+                                },
+                                tablet: {
+                                    changePoint: 768,
+                                    visibleItems: 3
+                                }
+                            }
+                        });
 
-    });
+                    });
                 </script>
             </div>
         </div>
-<!--        <ul class="start">
-            <li ><a href="#"><i></i></a></li>
-            <li><span>1</span></li>
-            <li class="arrow"><a href="#">2</a></li>
-            <li class="arrow"><a href="#">3</a></li>
-            <li class="arrow"><a href="#">4</a></li>
-            <li class="arrow"><a href="#">5</a></li>
-            <li ><a href="#"><i  class="next"> </i></a></li>
-        </ul>-->
+        <!--        <ul class="start">
+                    <li ><a href="#"><i></i></a></li>
+                    <li><span>1</span></li>
+                    <li class="arrow"><a href="#">2</a></li>
+                    <li class="arrow"><a href="#">3</a></li>
+                    <li class="arrow"><a href="#">4</a></li>
+                    <li class="arrow"><a href="#">5</a></li>
+                    <li ><a href="#"><i  class="next"> </i></a></li>
+                </ul>-->
     </div>
 </div>
 @endsection

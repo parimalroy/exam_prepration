@@ -78,6 +78,7 @@ class CategorieController extends Controller
         return redirect('categorie-manage')->with('message','Update Sucessfully');
                 
     }
+    
 
     private function photo(Request $request){
         $categorie_photo=$request->file('category_photo');
@@ -89,5 +90,6 @@ class CategorieController extends Controller
         Image::make($categorie_photo)->resize(204, 177)->save($uploadPath.$imageName);
         return $imageUrl;
     }
+    
     
 }

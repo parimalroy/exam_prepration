@@ -29,7 +29,7 @@ class SubcategorieController extends Controller {
 
     public function manageSubCategorie() {
         $allSubCategories = DB::table('tbl_subcategorie')
-                        ->join('tbl_categorie', 'tbl_subcategorie.subcate_id', '=', 'tbl_categorie.Cate_id')
+                        ->join('tbl_categorie', 'tbl_subcategorie.categorie_id', '=', 'tbl_categorie.Cate_id')
                         ->select('tbl_subcategorie.*', 'tbl_categorie.category_name')
                         ->get();
         return view('admin.subcategorie.manageSubContent', ['allSubCategories' => $allSubCategories]);

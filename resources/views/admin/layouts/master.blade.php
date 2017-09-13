@@ -318,6 +318,24 @@
                                 </ul>
                                 <!-- /.nav-second-level -->
                             </li>
+                             <li>
+                                <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i>Exam Categories<span class="fa arrow"></span></a>
+                                <ul class="nav nav-second-level">
+                                    <li>
+                                        <a href="{{url('examCategorie-addExamCategorie')}}">Add Exam Categories</a>
+                                    </li>
+                                    <li>
+                                        <a href="{{url('examCategorie-manageExamCategorie')}}">Manage Exam Categories</a>
+                                    </li>
+                                    <li>
+                                        <a href="{{url('examSubCategorie-addExamSubCategorie')}}">Add Exam Sub Categories</a>
+                                    </li>
+                                    <li>
+                                        <a href="{{url('examSubCategorie-manageExamSubCategorie')}}">Manage Exan Sub Categories</a>
+                                    </li>
+                                </ul>
+                                <!-- /.nav-second-level -->
+                            </li>
                             <li>
                                 <a href="forms.html"><i class="fa fa-edit fa-fw"></i> Forms</a>
                             </li>

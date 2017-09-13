@@ -1,17 +1,32 @@
+
 <div class="footer-top">
     <div class="container">
+        @foreach($allPublicationExamCategories as $allPublicationExamCategorie)
         <div class="col-md-4 footer-in">
-            <h4><i> </i>Suspendisse sed</h4>
-            <p>Aliquam dignissim porttitor tortor non fermentum. Curabitur in magna lectus. Duis sed eros diam. Lorem ipsum dolor sit amet, consectetur.</p>
+            <h4><i> </i>{{$allPublicationExamCategorie->exam_category_name}}</h4>
+            
+                <?php 
+                    $allExamSubcategories=DB::table('tbl_exam_sub_cate')
+//                              ->select('*')
+//                              ->where('publication_status',1)
+                              ->where('exam_categorie_id',$allPublicationExamCategorie->examCateid)
+                              ->join('tbl_exam_cate', 'tbl_exam_sub_cate.exam_categorie_id', '=', 'tbl_exam_cate.examCateid')
+                              ->select('tbl_exam_sub_cate.*','tbl_exam_cate.*')
+                              ->get();
+                    foreach($allExamSubcategories as $allExamSubcategorie){
+                ?>
+            <i><a href="">{{$allExamSubcategorie->exam_sub_category_name}}</a></i>
+              <?php } ?>
         </div>
-        <div class="col-md-4 footer-in">
+        @endforeach
+<!--        <div class="col-md-4 footer-in">
             <h4><i class="cross"> </i>Suspendisse sed</h4>
             <p>Aliquam dignissim porttitor tortor non fermentum. Curabitur in magna lectus. Duis sed eros diam. Lorem ipsum dolor sit amet, consectetur.</p>
         </div>
         <div class="col-md-4 footer-in">
             <h4><i class="down"> </i>Suspendisse sed</h4>
             <p>Aliquam dignissim porttitor tortor non fermentum. Curabitur in magna lectus. Duis sed eros diam. Lorem ipsum dolor sit amet, consectetur.</p>
-        </div>
+        </div>-->
         <div class="clearfix"></div>
     </div>
 </div>
@@ -60,4 +75,4 @@
         <div class="clearfix"></div>
     </div>
 </div>
-<p class="footer-class">Copyright © 2015 Modern Template by  <a href="http://w3layouts.com/" target="_blank">W3layouts</a> </p>
+<p class="footer-class">Copyright © 2017 Modern Template  </p>
