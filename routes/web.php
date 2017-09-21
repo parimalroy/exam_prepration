@@ -17,6 +17,7 @@
 
 Route::get('/','WelcomeController@index');
 Route::get('questin_details/{id}','WelcomeController@questionDetails');
+Route::get('exam_questin_details/{id}','WelcomeController@examQuestionDetails');
 Route::get('categorie-details/{id}','WelcomeController@categorieDetails');
 
 
@@ -49,11 +50,18 @@ Route::get('examCategorie-delete/{id}','ExamCategorieController@deleteExamCatego
 Route::get('examSubCategorie-addExamSubCategorie','ExamSubCategorieController@index');
 Route::post('examSubCategorie-save','ExamSubCategorieController@saveExamSubCategorie');
 Route::get('examSubCategorie-manageExamSubCategorie','ExamSubCategorieController@manageExamSubCategorie');
-Route::get('examCategorie-unpublish/{id}','ExamSubCategorieController@unpublishExamSubCategoriebCategorie-save','ExamSubCategorieController@saveExamSubCategorie');
+//Route::get('examCategorie-unpublish/{id}','ExamSubCategorieController@unpublishExamSubCategoriebCategorie-save','ExamSubCategorieController@saveExamSubCategorie');
 Route::get('examSubCategorie-manageExamSubCategorie','ExamSubCategorieController@manageExamSubCategorie');
-Route::get('examCategorie-unpublish/{id}','ExamSubCategorieController@unpublishExamSubCategorie');
-Route::get('examCategorie-publish/{id}','ExamSubCategorieController@publishExamSubCategorie');
-Route::get('examCategorie-delete/{id}','ExamSubCategorieController@DeleteExamSubCategorie');
+Route::get('examSubCategorie-unpublish/{id}','ExamSubCategorieController@unpublishExamSubCategorie');
+Route::get('examSubCategorie-publish/{id}','ExamSubCategorieController@publishExamSubCategorie');
+Route::get('examSubCategorie-delete/{id}','ExamSubCategorieController@DeleteExamSubCategorie');
+
+
+
+Route::get('examQuestion-addExamQuestion','ExamQuestionCategorieController@index');
+Route::post('examQuestionCategorie-save','ExamQuestionCategorieController@saveExamQuestion');
+Route::get('examQuestion-manage','ExamQuestionCategorieController@manageExamQuestion');
+Route::get('examQuestion-delete/{id}','ExamQuestionCategorieController@deleteExamQuestion');
 
 
 

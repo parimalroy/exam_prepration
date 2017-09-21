@@ -34,18 +34,18 @@ Manage Exam Sub Categorie
                             <td>{{$allSubCategorie->publication_status==1?'Publish':'Unpublish'}}</td>
                             <td class="center">
                                 @if($allSubCategorie->publication_status==1)
-                                <a href="{{url('examCategorie-unpublish/'.$allSubCategorie->examSubCateId)}}" title="Unpublish" class="btn btn-primary btn-sm">
+                                <a href="{{url('examSubCategorie-unpublish/'.$allSubCategorie->examSubCateId)}}" title="Unpublish" class="btn btn-primary btn-sm">
                                     <span class="glyphicon glyphicon-arrow-up"></span>
                                 </a>
                                 @else
-                                <a href="{{url('examCategorie-publish/'.$allSubCategorie->examSubCateId)}}" title="Publish" class="btn btn-warning btn-sm">
+                                <a href="{{url('examSubCategorie-publish/'.$allSubCategorie->examSubCateId)}}" title="Publish" class="btn btn-warning btn-sm">
                                     <span class="glyphicon glyphicon-arrow-down"></span>
                                 </a>
                                 @endif
                                 <!--                                <a href="" title="Edit" class="btn btn-success btn-sm">
                                                                     <span class="glyphicon glyphicon-edit"></span>
                                                                 </a>-->
-                                <a href="{{url('examCategorie-delete/'.$allSubCategorie->examSubCateId)}}" title="Delete" class="btn btn-danger btn-sm" onclick="return confirm('are you sure to delete!!')">
+                                <a href="{{url('examSubCategorie-delete/'.$allSubCategorie->examSubCateId)}}" title="Delete" class="btn btn-danger btn-sm" onclick="return confirm('are you sure to delete!!')">
                                     <span class="glyphicon glyphicon-trash"></span>
                                 </a>
 

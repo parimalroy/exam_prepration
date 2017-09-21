@@ -31,12 +31,18 @@ class CategorieController extends Controller
     }
     
     public function unpublishCategorie($id){
+        $given_text=$_GET['text'];
+        if($given_text==$id){
         $data=array();
         $data['publicatin_status']=0;
         DB::table('tbl_categorie')
                                 ->where('Cate_id',$id)
                                 ->update($data);
         return redirect('categorie-manage')->with('message','Uupublish Sucessfully');
+        }
+ else {
+     return redirect('categorie-manage')->with('message','False');
+ }
     }
     
     public function PublishCategorie($id){
@@ -91,5 +97,5 @@ class CategorieController extends Controller
         return $imageUrl;
     }
     
-    
+   
 }

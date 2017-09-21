@@ -13,7 +13,6 @@ class WelcomeController extends Controller {
                 ->take(8)
                 ->get();
         $allExamSubCategories=DB::table('tbl_exam_sub_cate')
-                                ->select('*')
                                 ->where('publication_status',1)
                                 ->first();
         return view('frontEnd.home.homeContent', ['allSubCategories' => $allSubCategories,'allExamSubCategories'=>$allExamSubCategories]);
@@ -38,6 +37,8 @@ class WelcomeController extends Controller {
                               ->get();
         return view('frontEnd.question.categorieDetails',['allSubcategories'=>$allSubcategories]);
     }
-
+    public function examQuestionDetails($id){
+        return view('frontEnd.exam_question.examQuestionContent');
+    }
 
 }

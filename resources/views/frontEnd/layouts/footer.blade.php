@@ -15,7 +15,7 @@
                               ->get();
                     foreach($allExamSubcategories as $allExamSubcategorie){
                 ?>
-            <i><a href="">{{$allExamSubcategorie->exam_sub_category_name}}</a></i>
+            <li><i><a href="{{url('exam_questin_details/'.$allExamSubcategorie->examSubCateId)}}">{{$allExamSubcategorie->exam_sub_category_name}}</a></i></li>
               <?php } ?>
         </div>
         @endforeach

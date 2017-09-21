@@ -336,6 +336,18 @@
                                 </ul>
                                 <!-- /.nav-second-level -->
                             </li>
+                             <li>
+                                <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i>Exam Question Categories<span class="fa arrow"></span></a>
+                                <ul class="nav nav-second-level">
+                                    <li>
+                                        <a href="{{url('examQuestion-addExamQuestion')}}">Add Exam Question</a>
+                                    </li>
+                                    <li>
+                                        <a href="{{url('examQuestion-manage')}}">Manage Exam Question</a>
+                                    </li>
+                                </ul>
+                                <!-- /.nav-second-level -->
+                            </li>
                             <li>
                                 <a href="forms.html"><i class="fa fa-edit fa-fw"></i> Forms</a>
                             </li>

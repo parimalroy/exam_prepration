@@ -40,7 +40,7 @@ Manage Categorie
                                     <span class="glyphicon glyphicon-arrow-up"></span>
                                 </a>
                                 @else
-                                <a href="{{url('categorie-publish/'.$categorie->Cate_id)}}" title="Publish" class="btn btn-warning btn-sm">
+                                <a href="{{url('categorie-publish/'.$categorie->Cate_id)}}" title="Publish" onclick="displaySameText()" class="btn btn-warning btn-sm">
                                     <span class="glyphicon glyphicon-arrow-down"></span>
                                 </a>
                                 @endif
@@ -50,15 +50,47 @@ Manage Categorie
                                 <a href="{{url('categorie-delete/'.$categorie->Cate_id)}}" title="Delete" class="btn btn-danger btn-sm" onclick="return confirm('are you sure to delete!!')">
                                     <span class="glyphicon glyphicon-trash"></span>
                                 </a>
-                                
-                                
+
+
                             </td>
                         </tr>
+
                         @endforeach
+                    <input type="text" name="name" onkeyup="displaySameText(this.value)"/>
                     </tbody>
                 </table>
                 <!-- /.table-responsive -->
+                <script type="text/javascript">
+                    if (window.XMLHttpRequest) {
+                        // code for IE7+, Firefox, Chrome, Opera, Safari
 
+                        xmlhttp = new XMLHttpRequest();
+                    } else {
+                        // code for IE6, IE5
+                        xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+                    }
+
+                    function displaySameText(given_text)
+                    {
+                //                alert(given_text);
+                        //var obj = document.getElementById(objID);
+                        serverPage = 'Http/Controllers/CategorieController.php?text=' + given_text;
+                        xmlhttp.open("GET", serverPage);
+                        xmlhttp.onreadystatechange = function ()
+                        {
+                //                    alert(xmlhttp.readyState);
+                //                    alert(xmlhttp.status);
+                            if (xmlhttp.readyState == 4 && xmlhttp.status == 200)
+                            {
+                                //alert(xmlhttp.responseText);
+                                document.getElementById('result').innerHTML = xmlhttp.responseText;
+                                //document.getElementById(objcw).innerHTML = xmlhttp.responseText;
+                            }
+                        }
+                        xmlhttp.send(null);
+                    }
+
+                </script>
             </div>
             <!-- /.panel-body -->
         </div>
