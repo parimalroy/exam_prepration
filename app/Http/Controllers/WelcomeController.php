@@ -12,10 +12,11 @@ class WelcomeController extends Controller {
                 ->where('publication_status', 1)
                 ->take(8)
                 ->get();
-        $allExamSubCategories=DB::table('tbl_exam_sub_cate')
-                                ->where('publication_status',1)
-                                ->first();
-        return view('frontEnd.home.homeContent', ['allSubCategories' => $allSubCategories,'allExamSubCategories'=>$allExamSubCategories]);
+         $allJobTips = DB::table('tbl_jobtips')
+                ->where('publicatin_status', 1)
+                ->get();
+        
+        return view('frontEnd.home.homeContent', ['allSubCategories' => $allSubCategories,'allJobTips'=>$allJobTips]);
     }
 
     public function questionDetails($id) {
@@ -38,7 +39,21 @@ class WelcomeController extends Controller {
         return view('frontEnd.question.categorieDetails',['allSubcategories'=>$allSubcategories]);
     }
     public function examQuestionDetails($id){
-        return view('frontEnd.exam_question.examQuestionContent');
+         $allExamQuestiones=DB::table('tbl_exam_questions')
+                              ->select('*')
+                              ->where('exam_sub_categorie_id',$id)
+                              ->join('tbl_exam_sub_cate', 'tbl_exam_questions.exam_sub_categorie_id', '=', 'tbl_exam_sub_cate.examSubCateId')
+                              ->select('tbl_exam_questions.*','tbl_exam_sub_cate.*')
+                              ->get();
+        return view('frontEnd.exam_question.examQuestionContent',['allExamQuestiones'=>$allExamQuestiones]);
     }
+    public function jobTips($id){
+        $allJobTips = DB::table('tbl_jobtips')
+                ->where('tips_id',$id)
+                ->where('publicatin_status', 1)
+                ->get();
+        return view('frontEnd.job_topic.jobTipsContent',['allJobTips'=>$allJobTips]);
+    }
+    
 
 }

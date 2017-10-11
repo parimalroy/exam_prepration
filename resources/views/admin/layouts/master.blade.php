@@ -349,6 +349,18 @@
                                 <!-- /.nav-second-level -->
                             </li>
                             <li>
+                                <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i>Job Tips<span class="fa arrow"></span></a>
+                                <ul class="nav nav-second-level">
+                                    <li>
+                                        <a href="{{url('jobTips-addJobTips')}}">Add Job TIps</a>
+                                    </li>
+                                    <li>
+                                        <a href="">Manage Exam Question</a>
+                                    </li>
+                                </ul>
+                                <!-- /.nav-second-level -->
+                            </li>
+                            <li>
                                 <a href="forms.html"><i class="fa fa-edit fa-fw"></i> Forms</a>
                             </li>
                             <li>

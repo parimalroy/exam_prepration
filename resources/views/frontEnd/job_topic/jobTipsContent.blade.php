@@ -1,23 +1,24 @@
 @extends('frontEnd.layouts.master')
 @section('title')
-Question and answare
+Job TIps
 @endsection
 @section('content')
 <div class="container">
     <div class="products">
-        <h2 class=" products-in">Question and Answare</h2>
-        <div class=" top-products">
+        <h2 class=" products-in">Job Tips</h2>
+        <div class=" top-products ">
             <div class="col-md-12 md-col">
                 <div class="col-md">
 <!--                    <a href="single.html" class="compare-in"><img  src="images/pic.jpg" alt="" />
                     </a>	-->
-                   @foreach($allExamQuestiones as $allExamQuestione)
+                   @foreach($allJobTips as $allJobTip)
                     <div class="top-content">
-                        <h4><span style="color:blue"">Ques:{{$allExamQuestione->exam_question_name}} </span></h4>
+                        <h2 class="text-center"><strong><span style="color:#fff">{{$allJobTip->job_tips_name}} </span></strong></h2><hr/>
                         <div class="white"></br>
-                            <p><b>Ans: {{$allExamQuestione->exam_answare_name}}</b> </p><hr/>
-                            <!--<p class="dollar"><span class="in-dollar">$</span><span>2</span><span>0</span></p>-->
-                            <div class="clearfix"></div>
+                            
+                            <p style="font-size: 20px">  {{$allJobTip->job_tips_description}}</p>
+                            
+                            <div lass="clearfix"></div>
                         </div>
                     </div>
                     @endforeach

@@ -1,9 +1,9 @@
 @extends('admin.layouts.master')
 @section('title')
-Add Categorie
+This is Job Tips
 @endsection
 @section('head')
-Add Categorie
+Add Job Tips
 @endsection
 @section('content')
 <h3 class="text text-center text-success">{{Session::get('message')}}</h3>
@@ -11,20 +11,20 @@ Add Categorie
     <div class="col-sm-12">
         <div class="well">
 
-            {!! Form::open(['url' => 'categorie-save','name'=> 'myForm','method'=> 'POST','enctype'=> 'multipart/form-data','class'=> 'form-horizontal','onsubmit'=> 'return validation();']) !!}
-            {{csrf_field()}}
+            {!! Form::open(['url' => 'jobtips-save','name'=> 'myForm','method'=> 'POST','enctype'=> 'multipart/form-data','class'=> 'form-horizontal','onsubmit'=> 'return validation();']) !!}
+            
             <div class="form-group">
-                <label class="control-label col-sm-3">Category Name</label>
+                <label class="control-label col-sm-3">Job Tips Name</label>
 
                 <div class="col-sm-9">
-                    <input type='text' id="category_name" name="category_name" class="form-control"/>
+                    <input type='text' id="category_name" name="job_tips_name" class="form-control"/>
                     <span class="text-danger"> {{$errors->has('category_name')? $errors->first('category_name'): ''}}</span>
                 </div>
             </div>
             <div class="form-group">
-                <label class="control-label col-sm-3">Category Description</label>
+                <label class="control-label col-sm-3">job Tips Description</label>
                 <div class="col-sm-9">
-                    <textarea class="form-control"rows="4"name="category_description"></textarea>
+                    <textarea class="form-control"rows="8"name="job_tips_description"></textarea>
                     <span class="text-danger"> {{$errors->has('category_name')? $errors->first('category_name'): ''}}</span>
                 </div>
 
@@ -41,17 +41,17 @@ Add Categorie
                 </div>
             </div>
             <div class="form-group">
-                <label class="control-label col-sm-3">Category Photo</label>
+                <label class="control-label col-sm-3">Job Tips Photo</label>
 
                 <div class="col-sm-9">
-                    <input type='file' name="category_photo" accept="image/*"/>
+                    <input type='file' name="job_tips_photo" accept="image/*"/>
                     <span class="text-danger"> {{$errors->has('category_photo')? $errors->first('category_photo'): ''}}</span>
                 </div>
             </div>
             <div class="form-group">
                 <label class="control-label col-sm-3"></label>
                 <div class="col-sm-9">
-                    <input type="submit"name="btn" id="btn" value="Save Category Info" class="btn-block btn-success btn-lg">
+                    <input type="submit"name="btn" id="btn" value="Save Job Tipss Info" class="btn-block btn-success btn-lg">
                 </div>
 
             </div>

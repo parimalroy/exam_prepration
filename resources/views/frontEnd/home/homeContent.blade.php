@@ -63,19 +63,24 @@ Home Page
         </div>
         <!---->
         <div class="content-middle">
-            <h3 class="future">BCS Question</h3>
+            <h3 class="future">Job Tips</h3>
             <div class="content-middle-in">
-                @foreach($allExamSubCategories as $allExamSubCategorie)
+                
                 <ul id="flexiselDemo1">	
-                    
-                    <li><img src="{{asset('public/frontEnd/')}}/images/ap.png"/>{{$allExamSubCategories->exam_sub_category_name}}</li>
-                    
-                    <!--<li><img src="{{asset('public/frontEnd/')}}/images/ap1.png"/></li>-->
-                    <!--<li><img src="{{asset('public/frontEnd/')}}/images/ap2.png"/></li>-->
-                    <!--<li><img src="{{asset('public/frontEnd/')}}/images/ap3.png"/></li>-->
+                    @foreach($allJobTips as $allJobTip)
+                    <li><a><img src="{{asset($allJobTip->job_tips_photo)}}"/>
+                        </a>
+                          <div class="top-content">
+                            <h5><a href="{{url('job-Tips/'.$allJobTip->tips_id)}}">{{$allJobTip->job_tips_name}}</a></h5>
+                            <div class="white">
+                        
 
+                        </div>
+                    </li>
+                
+                    @endforeach
                 </ul>
-                @endforeach
+               
                 <script type="text/javascript">
                     $(window).load(function () {
                         $("#flexiselDemo1").flexisel({
