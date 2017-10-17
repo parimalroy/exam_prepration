@@ -20,6 +20,7 @@ Route::get('questin_details/{id}','WelcomeController@questionDetails');
 Route::get('exam_questin_details/{id}','WelcomeController@examQuestionDetails');
 Route::get('categorie-details/{id}','WelcomeController@categorieDetails');
 Route::get('job-Tips/{id}','WelcomeController@jobTips');
+Route::post('searchQuestion','WelcomeController@search');
 
 
 
@@ -84,6 +85,9 @@ Route::post('sub_categorie-update','SubcategorieController@updateSubCategorie');
 
 Route::get('jobTips-addJobTips','JobtipsController@index');
 Route::post('jobtips-save','JobtipsController@saveJobTips');
+Route::get('jobTips-manage','JobtipsController@manageJobTips');
+Route::get('unpublish-jobtips/{id}','JobtipsController@unpublishJobtips');
+Route::get('publish-jobtips/{id}','JobtipsController@publishJobtips');
 
 
 

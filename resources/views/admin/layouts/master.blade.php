@@ -355,7 +355,7 @@
                                         <a href="{{url('jobTips-addJobTips')}}">Add Job TIps</a>
                                     </li>
                                     <li>
-                                        <a href="">Manage Exam Question</a>
+                                        <a href="{{url('jobTips-manage')}}">Manage Exam Question</a>
                                     </li>
                                 </ul>
                                 <!-- /.nav-second-level -->

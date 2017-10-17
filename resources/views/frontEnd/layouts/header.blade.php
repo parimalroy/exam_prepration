@@ -69,37 +69,3 @@
         </div>
     </div>
 </div>
-<div class="header-bottom-in">
-    <div class="container">
-        <div class="header-bottom-on">
-            <p class="wel"><a href="#">Welcome visitor you can login or create an account.</a></p>
-            <div class="header-can">
-                <ul class="social-in">
-                    <li><a href="#"><i> </i></a></li>
-                    <li><a href="#"><i class="facebook"> </i></a></li>
-                    <li><a href="#"><i class="twitter"> </i></a></li>					
-                    <li><a href="#"><i class="skype"> </i></a></li>
-                </ul>	
-                <div class="down-top">		
-<!--                    <select class="in-drop">
-                        <option value="Dollars" class="in-of">Dollars</option>
-                        <option value="Euro" class="in-of">Euro</option>
-                        <option value="Yen" class="in-of">Yen</option>
-                    </select>-->
-                    
-                </div>
-                <div class="search">
-                    <form>
-                        <input type="text" value="Search" onfocus="this.value = '';" onblur="if (this.value == '') {
-                                                this.value = '';
-                                            }" >
-                        <input type="submit" value="">
-                    </form>
-                </div>
-
-                <div class="clearfix"> </div>
-            </div>
-            <div class="clearfix"></div>
-        </div>
-    </div>
-</div>

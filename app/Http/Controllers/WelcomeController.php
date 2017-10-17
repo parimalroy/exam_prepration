@@ -55,5 +55,12 @@ class WelcomeController extends Controller {
         return view('frontEnd.job_topic.jobTipsContent',['allJobTips'=>$allJobTips]);
     }
     
+    public function search(Request $request){
+        $search=$request->searchs;
+        $result=DB::table('tbl_que')->where('question_name','like','%'.$search.'%')->paginate(2);
+
+        return view('frontEnd.question.questionContent_1',['result'=>$result]);
+    }
+    
 
 }
