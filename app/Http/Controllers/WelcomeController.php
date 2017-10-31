@@ -57,7 +57,7 @@ class WelcomeController extends Controller {
     
     public function search(Request $request){
         $search=$request->searchs;
-        $result=DB::table('tbl_que')->where('question_name','like','%'.$search.'%')->paginate(2);
+        $result=DB::table('tbl_que')->where('question_name','like','%'.$search.'%')->paginate(25);
 
         return view('frontEnd.question.questionContent_1',['result'=>$result]);
     }

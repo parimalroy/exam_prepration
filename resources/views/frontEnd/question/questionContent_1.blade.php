@@ -8,9 +8,7 @@ Question and answare
         <h2 class=" products-in">Search Result</h2>
         
         <div class=" top-products">
-            @if($result=='')
-            <h3 class="text text-danger">Result not found</h3>'
-            @else
+            
             @foreach($result as $res)
             <table class="table">
                 <thead>
@@ -27,7 +25,7 @@ Question and answare
                 </tbody>
             </table>
           @endforeach
-           @endif
+           
             <div class="clearfix"></div>
         </div>
     </div>

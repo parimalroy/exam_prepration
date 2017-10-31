@@ -91,3 +91,7 @@ Route::get('publish-jobtips/{id}','JobtipsController@publishJobtips');
 
 
 
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
